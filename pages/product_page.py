@@ -22,3 +22,5 @@ class ProductPage(BasePage):
         price_book = self.browser.find_element(*ProductPageLocators.PRICE_BOOK).text
         price_book_equal = self.browser.find_element(*ProductPageLocators.MESSAGE_PRICE_BOOK).text
         assert price_book == price_book_equal, 'Book price is not equal'
+
+    is_not_element_present

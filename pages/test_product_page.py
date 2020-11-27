@@ -4,6 +4,7 @@ from pages.product_page import ProductPage
 import time
 import pytest
 
+
 @pytest.mark.parametrize('link', [0, 1, 2, 3, 4, 5, 6,
                                   pytest.param(7, marks=pytest.mark.xfail),
                                   8, 9])
