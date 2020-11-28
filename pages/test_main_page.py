@@ -29,4 +29,5 @@ def test_guest_cant_see_success_message_after_adding_product_to_basket(browser):
     page = ProductPage(browser, link)
     page.open()
     page.add_to_basket_click()
+    page.guest_can_add_product_to_basket()
     time.sleep(3)

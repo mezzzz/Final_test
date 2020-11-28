@@ -23,4 +23,6 @@ class ProductPage(BasePage):
         price_book_equal = self.browser.find_element(*ProductPageLocators.MESSAGE_PRICE_BOOK).text
         assert price_book == price_book_equal, 'Book price is not equal'
 
-    is_not_element_present
+    def guest_can_add_product_to_basket(self):
+        assert self.is_not_element_present(*ProductPageLocators.MESSAGE_BOOK_NAME), "is present, but not should be"
+
