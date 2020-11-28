@@ -26,3 +26,6 @@ class ProductPage(BasePage):
     def guest_can_add_product_to_basket(self):
         assert self.is_not_element_present(*ProductPageLocators.MESSAGE_BOOK_NAME), "is present, but not should be"
 
+    def message_disappeared_after_adding_product_to_basket(self):
+        assert self.is_disappeared(*ProductPageLocators.MESSAGE_BOOK_NAME), "is present, but not should be"
+
