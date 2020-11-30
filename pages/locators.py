@@ -24,3 +24,4 @@ class BasePageLocators():
     LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
     BASKET_BUTTON = (By.CSS_SELECTOR, '[class="btn-group"] [href="/ru/basket/"]')
     MESSAGE_BASKET_IS_EMPTY = (By.CSS_SELECTOR, '#content_inner p')
+    BOOK_SELECTOR = (By.CSS_SELECTOR, '[class="btn btn-lg btn-primary btn-block"]')
