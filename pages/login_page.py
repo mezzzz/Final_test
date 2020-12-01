@@ -1,7 +1,12 @@
 from .base_page import BasePage
 from .locators import LoginPageLocators
 from .locators import ProductPageLocators
+import faker
+import time
+f = faker.Faker()
 
+email = f.email()
+password = "392178397129081"
 
 class LoginPage(BasePage):
     def should_be_login_page(self):
@@ -17,5 +22,9 @@ class LoginPage(BasePage):
 
     def should_be_register_form(self):
         assert self.is_element_present(*LoginPageLocators.REGISTER_FORM), "REGISTER_FORM is not presented"
-    def register_new_user(email, password):
 
+    def register_new_user(self, email, password):
+        self.browser.find_element(*LoginPageLocators.EMAIL_INPUT).send_keys(email)
+        self.browser.find_element(*LoginPageLocators.PASSWORD1).send_keys(password)
+        self.browser.find_element(*LoginPageLocators.PASSWORD2).send_keys(password)
+        self.browser.find_element(*LoginPageLocators.REGISTER_BUTTON).click()
