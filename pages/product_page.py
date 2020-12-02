@@ -5,7 +5,7 @@ from .locators import ProductPageLocators
 class ProductPage(BasePage):
     def can_add_product_to_basket(self):
         self.add_to_basket_click()
-        #self.solve_quiz_and_get_code()
+        self.solve_quiz_and_get_code()
         self.check_price()
         self.check_name()
 

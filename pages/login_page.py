@@ -1,8 +1,6 @@
 from .base_page import BasePage
 from .locators import LoginPageLocators
-from .locators import ProductPageLocators
 import faker
-import time
 f = faker.Faker()
 
 email = f.email()
