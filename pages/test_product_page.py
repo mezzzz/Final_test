@@ -15,13 +15,11 @@ def test_guest_can_add_product_to_basket(browser,link):
     link = f"http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer{link}"
     page = ProductPage(browser, link)
     page.open()
-    page.can_add_product_to_basket()
-    
-def test_guest_should_see_login_link_on_product_page(browser):
-    link = "http://selenium1py.pythonanywhere.com/en-gb/catalogue/the-city-and-the-stars_95/"
-    page = ProductPage(browser, link)
-    page.open()
-    page.should_be_login_link()
+    page.add_to_basket_click()
+    page.solve_quiz_and_get_code()
+    page.check_price()
+    page.check_name()
+
 
 
 @pytest.mark.need_review
@@ -55,14 +53,14 @@ class TestUserAddToBasketFromProductPage():
         self.page.should_be_authorized_user()
 
     def test_user_cant_see_success_message(self,browser):
-        link = "http://selenium1py.pythonanywhere.com/ru/catalogue/the-shellcoders-handbook_209/"
+        link = "http://selenium1py.pythonanywhere.com/en-gb/catalogue/the-shellcoders-handbook_209/"
         page = ProductPage(browser, link)
         page.open()
-        page.guest_can_add_product_to_basket()
+        page.can_add_product_to_basket()
 
-    @pytest.mark.need_review1
+    @pytest.mark.need_review
     def test_user_can_add_product_to_basket(self,browser):
-        link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207"
+        link = "http://selenium1py.pythonanywhere.com/en-gb/catalogue/coders-at-work_207"
         page = ProductPage(browser, link)
         page.open()
-        page.guest_can_add_product_to_basket()
+        page.can_add_product_to_basket()
